@@ -2,7 +2,7 @@
     const tasks = [
         {
             content: "Masło",
-            done: false,
+            done: true,
         },
     ];
     const AddNewTask = (newTask) => {
@@ -15,7 +15,7 @@
     const Render = () => {
         let htmlString = "";
         for (const task of tasks) {
-            htmlString += `<li>${task.content}</li>`;
+            htmlString += `<li class="form__task"><button class="form__button--toggleDone">${task.done?"✔":""}</button>${task.content}<button class="form__button--deleteTask">🔙</button></li>`;
         }
         document.querySelector(".js-tasksList").innerHTML = htmlString;
     };
