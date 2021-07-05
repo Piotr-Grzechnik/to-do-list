@@ -1,10 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "",
-            done: false,
-        },
-    ];
+    const tasks = [];
     const ToogleTaskDone=(taskindex)=>{
         tasks[taskindex].done=!tasks[taskindex].done;
         Render();
@@ -21,6 +16,8 @@
         for (const task of tasks) {
             htmlString += `<li class="form__task-list"><button class="form__button--toggleDone js-done">${task.done?"✔":""}</button><p class="form__task ${task.done?"form__task-done":""}">${task.content}</p><button class="form__button--deleteTask js-remove">🗑</button></li>`;
         }
+
+
         document.querySelector(".js-tasksList").innerHTML = htmlString;
         const removeButtons=document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index)=>{
@@ -35,6 +32,10 @@
                 ToogleTaskDone(taskindex);
             })
         });
+        if(tasks.length==0)
+        {
+            document.querySelector(".js-tasksList").innerHTML =`<input class="form__input form__input--disabled" type="text" placeholder="Start adding new tasks..." disabled>`
+        }
     };
     const onFormSubmit = (event) => {
         event.preventDefault();
