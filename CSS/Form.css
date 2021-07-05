@@ -18,8 +18,8 @@
     font-weight: bold;
     margin: 0px;
     min-width: 100%;
+    color: hsl(180, 100%, 10%);
 }
-
 .form__input {
     width: 100%;
     max-width: 80%;
@@ -30,10 +30,16 @@
     font-size: 20px;
     border-radius: 5px;
 }
+.form__input--disabled{
+    background-color: transparent;
+}
+.form__input::placeholder{
+    color: hsl(0, 0%, 75%);
+}
 
-@media(max-width: 535px) {
+@media(max-width: 575px) {
     .form__input {
-        max-width: 75%;
+        max-width: 78%;
     }
 }
 
@@ -74,32 +80,60 @@
 .form__button:active {
     background-color: hsl(180, 100%, 15%);
 }
-
-.form__task {
+.form__task-list {
+    margin: 5px 0px;
+    width: 100%;
     list-style: none;
     display: flex;
     align-items: center;
-    background: rgb(212, 181, 181);
-    padding: 10px;
-    border-bottom: 1px solid;
-    justify-content: space-between;
-    border-radius: 20px;
+    /* background: rgb(212, 181, 181); */
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    /* justify-content: space-between;  */
+    /* border-radius: 20px; */
 }
-
+.list{
+    min-height: 73px;
+}
 .form__button--deleteTask {
+    color: rgb(107, 22, 22);
     padding: 3px;
     width: 32px;
     border: 1px solid transparent;
     border-radius: 50%;
     background: none;
     font-size: large;
+    order: 2;
+    justify-self: flex-end;
 }
-.form__button--deleteTask:active{
+
+.form__button--deleteTask:hover {
     background: crimson;
-    border: 1px solid;
 }
-.form__button--toggleDone{
+
+.form__task {
+    max-width: 636px;
+    word-wrap: break-word;
+    flex-grow: 1;
+    margin: 0px 15px;
+    font-weight: bold;
+}
+
+.form__button--toggleDone {
+    text-decoration: initial;
     background: white;
     height: 28px;
     width: 28px;
+    margin: 0px 10px;
+    color: rgb(30, 197, 30);
+}
+.form__button--toggleDone:hover{
+    background-color: hsl(120, 74%, 25%);
+}
+.form__button--toggleDone:active{
+    background-color: transparent;
+}
+
+.form__task-done {
+    text-decoration: line-through;
 }

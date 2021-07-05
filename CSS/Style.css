@@ -1,9 +1,15 @@
 html{
     box-sizing: border-box;
+   
 }
 *,::after,::before{
     box-sizing: inherit;
+    font-family: GoogleFont;
 }
 .body{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(228, 228, 228);  
 }
+@font-face {
+        font-family: 'GoogleFont';
+        src: url("/SpecialElite-Regular.ttf");
+    }
